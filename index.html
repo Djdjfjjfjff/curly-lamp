@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<style>
+.login-container {
+width: 300px;
+margin: 50px auto;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+display: block;
+margin-bottom: 10px;
+}
+
+input[type="email"], input[type="password"] {
+width: 100%;
+height: 40px;
+margin-bottom: 20px;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+button {
+width: 100%;
+height: 40px;
+background-color: #4CAF50;
+color: #fff;
+padding: 10px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #3e8e41;
+}
+</style>
+</head>
+<body>
+<div class="login-container">
+<h2>Login</h2>
+<form id="login-form">
+<label>E-mail:</label>
+<input type="email" id="email" name="email" required>
+<label>Senha:</label>
+<input type="password" id="senha" name="senha" required>
+<button>Login</button>
+</form>
+<div id="mensagem"></div>
+</div>
+<script>
+const form = document.getElementById('login-form');
+form.addEventListener('submit', (e) => {
+e.preventDefault();
+const email = document.getElementById('email').value;
+const senha = document.getElementById('senha').value;
+
+if (email === 'usuario@example.com' && senha === '123456') {
+document.getElementById('mensagem').innerText = 'Login efetuado com sucesso!';
+} else {
+document.getElementById('mensagem').innerText = 'E-mail ou senha incorretos!';
+}
+});
+</script>
+</body>
+</html>
